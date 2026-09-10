@@ -1,0 +1,295 @@
+:root {
+    --primary-text-color: #183b56;
+    /* FIXED: Removed extra hyphens from variable values */
+    --secondary-text: #577592;
+    --accent-text: #2294ed;
+    --accent-color-dark: #1d69de;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6rem;
+    color: var(--primary-text-color);
+    background-color: #f8fafc; /* Added a subtle backdrop color */
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.hover {
+    color: var(--primary-text-color);
+    transition: all 0.3s ease;
+}
+
+.hover:hover {
+    color: var(--accent-color-dark);
+}
+
+.hover:active {
+    color: red;
+}
+
+nav {
+    background-color: #f3faff;
+    box-shadow: 0 0 5px #abcff7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: 20px; /* Prevents text hitting screen edges on mobile */
+}
+
+.main-nav {
+    justify-content: space-between;
+    height: 80px; /* Gives navigation an explicit height matching logo */
+}
+
+.main-nav > ul {
+    font-size: 18px;
+    gap: 40px;
+    list-style-type: none;
+}
+
+.nav-item {
+    cursor: pointer; /* Makes links feel clickable */
+}
+
+/* Added .active class styling since your JS adds it */
+.nav-item.active {
+    color: var(--accent-text);
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.search-box {
+    gap: 5px;
+}
+
+.search-box > .input-box {
+    padding: 6px 8px;
+    border: 1px solid #abcff7;
+    background-color: #f9fafd;
+    border-radius: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.search-box > .input-box:focus {
+     outline: none;
+     border-color: var(--accent-color-dark);
+}
+
+.search-box > .searchBtn {
+    background-color: #4b87e2;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 0.2s ease;
+}
+
+.search-box > .searchBtn:hover {
+    background-color: #abcff7;
+    color: #183b56;
+}
+
+.search-box > .searchBtn:active {
+    background-color: red;
+    color: white;
+}
+
+main {
+    /* FIXED: Replaced loose uniform 80px margin with structured spacing */
+    padding-top: 100px; 
+    padding-bottom: 40px;
+}
+
+.cards-container {
+    justify-content: center; /* Centers cards gracefully if row isn't full */
+    gap: 30px; /* Standardizes equal spacing around your grid cards */
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.card {
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 2px 8px rgba(171, 207, 247, 0.4);
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 1px 4px 12px rgba(29, 105, 222, 0.2);
+    transform: translateY(-4px);
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+#news-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-text-color);
+}
+
+.news-source {
+    margin-block: 8px;
+    color: var(--secondary-text);
+}
+
+#news-desc {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+.view-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--accent-text);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+    /* Hide the desktop layout setup */
+    .main-nav {
+        position: relative;
+    }
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+    /* Style the hamburger menu button appearance */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 101;
+        order: 2; /* Pushes the menu toggle button next to the search layout */
+    }
+
+    .menu-toggle .bar {
+        height: 3px;
+        width: 100%;
+        background-color: var(--primary-text-color);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    /* Transform hamburger into an 'X' when open */
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Turn the horizontal list into a hidden vertical mobile drawer */
+    .main-nav > ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: -100%; /* Hidden off-screen by default */
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: #f3faff;
+        gap: 0;
+        padding-top: 20px;
+        transition: all 0.4s ease-in-out;
+        box-shadow: 0 5px 5px rgba(171, 207, 247, 0.3);
+        z-index: 100;
+    }
+
+    /* Slide the navigation menu in when the 'open' class is applied */
+    .main-nav > ul.open {
+        left: 0;
+    }
+
+    .main-nav > ul li {
+        width: 100%;
+        text-align: center;
+        padding-block: 20px;
+        border-bottom: 1px solid #abcff7;
+        font-size: 20px;
+    }
+
+    /* Adjust structural layout elements for narrow screens */
+    .search-box {
+        order: 1;
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .search-box > .input-box {
+        width: 130px; /* Slims down the search bar on mobile screens */
+        padding: 5px 6px;
+        font-size: 14px;
+    }
+
+    .search-box > .searchBtn {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    main {
+        padding-top: 110px; /* Gives extra space on mobile so cards don't cut off */
+    }
+
+    .card {
+        width: 100%; /* Cards take up full container width on phones */
+        max-width: 400px;
+    }
+}
+
+/* Base Desktop configuration rule for the toggle button */
+@media screen and (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Hides hamburger button on large displays */
+    }
+}

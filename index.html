@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class=" container main-nav flex ">
+            <a href="#" onclick="reload()" class="logo">
+                <img src="./assets/logo.png" alt="logo">
+            </a>
+
+                  <!-- ADDED: Hamburger Menu Button for Mobile toggling -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+            <ul class="flex" id="nav-links">
+            
+                    <li id="india" onclick="onNavClick('india')" class=" nav-item hover ">Home</li>
+                    <li id="punjab" onclick="onNavClick('punjab')" class="hover nav-item">Punjab</li>
+                    <li id="market" onclick="onNavClick('market')" class="hover nav-item">Market</li>
+            
+             
+                    <li id="punjab-staff" onclick="onNavClick('punjab-staff')" class="nav-item hover ">Employees</li>
+          
+                    <li id="finance" onclick="onNavClick('finance')" class="hover nav-item">Finance</li>
+             
+              
+                    <li id="programming"  class="hover nav-item" onclick="onNavClick('programming')">Programming</li>
+               
+            </ul>
+            <div class="search-box flex">
+                <input id="newsInput" type="text" class="input-box" placeholder="e.g Science">
+                <button id="searchBtn" onclick="" class="searchBtn">Search</button>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+           
+        </div>
+    </main>
+<template id="template-news-card">
+ <div class="card">
+                <div class="card-header">
+                    <img src="https://placehold.co/400" alt="firstImage" id="news-img">
+                </div>
+                <div class="card-content">
+                    <h3 id="news-title">This is the Title</h3>
+                    <h6 id="news-source" class="news-source">End Gadget 26/09/2026</h6>
+                    <p id="news-desc" class="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptatem veritatis reiciendis provident quis repellendus cumque ex sit exercitationem minus?</p>
+                            
+                </div>
+            </div>
+</template>
+<script src="script.js"></script>
+</body>
+
+</html>
