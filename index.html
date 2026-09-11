@@ -2,65 +2,322 @@
 <html lang="en">
 
 <head>
+    <!-- =========================
+         BASIC META TAGS
+    ========================== -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta name="googlebot"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- =========================
+         TITLE & DESCRIPTION
+    ========================== -->
+
+    <title>Latest India, Punjab, Market & Finance News | </title>
+
+    <meta name="description"
+        content="Get the latest India, Punjab, market, finance, employee and programming news. Stay updated with the latest news, updates and important stories.">
+
+    <meta name="keywords"
+        content="India news, Punjab news, latest news, market news, finance news, employee news, programming news">
+
+    <meta name="author" content="ZeninNews">
+
+    <!-- =========================
+         CANONICAL URL
+    ========================== -->
+
+    <link rel="canonical"
+        href="https://YOUR-DOMAIN.pages.dev/">
+
+    <!-- =========================
+         FAVICON
+    ========================== -->
+
+    <link rel="icon"
+        type="image/png"
+        href="./assets/logo.png">
+
+    <link rel="apple-touch-icon"
+        href="./assets/logo.png">
+
+    <!-- =========================
+         STYLESHEET
+    ========================== -->
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- =========================
+         OPEN GRAPH / FACEBOOK
+    ========================== -->
+
+    <meta property="og:type"
+        content="website">
+
+    <meta property="og:title"
+        content="Latest India, Punjab, Market & Finance News">
+
+    <meta property="og:description"
+        content="Stay updated with the latest India, Punjab, market, finance, employee and programming news.">
+
+    <meta property="og:url"
+        content="https://YOUR-DOMAIN.pages.dev/">
+
+    <meta property="og:site_name"
+        content="ZeninNews">
+
+    <meta property="og:image"
+        content="https://YOUR-DOMAIN.pages.dev/assets/logo.png">
+
+    <meta property="og:image:alt"
+        content="ZeninNews">
+
+    <!-- =========================
+         TWITTER / X CARD
+    ========================== -->
+
+    <meta name="twitter:card"
+        content="summary_large_image">
+
+    <meta name="twitter:title"
+        content="Latest India, Punjab, Market & Finance News">
+
+    <meta name="twitter:description"
+        content="Latest news and updates from India, Punjab, market, finance and programming.">
+
+    <meta name="twitter:image"
+        content="https://YOUR-DOMAIN.pages.dev/assets/logo.png">
+
+    <!-- =========================
+         STRUCTURED DATA
+         WebSite + SearchAction
+    ========================== -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ZeninNews",
+        "url": "https://YOUR-DOMAIN.pages.dev/",
+        "description": "Latest India, Punjab, market, finance and programming news.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://YOUR-DOMAIN.pages.dev/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
 </head>
 
+
 <body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <nav>
-        <div class=" container main-nav flex ">
-            <a href="#" onclick="reload()" class="logo">
-                <img src="./assets/logo.png" alt="logo">
+        <div class="container main-nav flex">
+
+            <a href="#"
+                onclick="reload()"
+                class="logo"
+                aria-label="ZeninNews Home">
+
+                <img src="./assets/logo.png"
+                    alt="ZeninNews Logo"
+                    width="120"
+                    height="40">
             </a>
 
-                  <!-- ADDED: Hamburger Menu Button for Mobile toggling -->
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
+
+            <!-- Mobile Menu -->
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="nav-links">
+
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+
+            </button>
+
+
+            <!-- Navigation -->
+
             <ul class="flex" id="nav-links">
-            
-                    <li id="india" onclick="onNavClick('india')" class=" nav-item hover ">Home</li>
-                    <li id="punjab" onclick="onNavClick('punjab')" class="hover nav-item">Punjab</li>
-                    <li id="market" onclick="onNavClick('market')" class="hover nav-item">Market</li>
-            
-             
-                    <li id="punjab-staff" onclick="onNavClick('punjab-staff')" class="nav-item hover ">Employees</li>
-          
-                    <li id="finance" onclick="onNavClick('finance')" class="hover nav-item">Finance</li>
-             
-              
-                    <li id="programming"  class="hover nav-item" onclick="onNavClick('programming')">Programming</li>
-               
+
+                <li id="india"
+                    onclick="onNavClick('india')"
+                    class="nav-item hover">
+
+                    Home
+
+                </li>
+
+
+                <li id="punjab"
+                    onclick="onNavClick('punjab')"
+                    class="nav-item hover">
+
+                    Punjab
+
+                </li>
+
+
+                <li id="market"
+                    onclick="onNavClick('market')"
+                    class="nav-item hover">
+
+                    Market
+
+                </li>
+
+
+                <li id="punjab-staff"
+                    onclick="onNavClick('punjab-staff')"
+                    class="nav-item hover">
+
+                    Employees
+
+                </li>
+
+
+                <li id="finance"
+                    onclick="onNavClick('finance')"
+                    class="nav-item hover">
+
+                    Finance
+
+                </li>
+
+
+                <li id="programming"
+                    onclick="onNavClick('programming')"
+                    class="nav-item hover">
+
+                    Programming
+
+                </li>
+
             </ul>
+
+
+            <!-- Search -->
+
             <div class="search-box flex">
-                <input id="newsInput" type="text" class="input-box" placeholder="e.g Science">
-                <button id="searchBtn" onclick="" class="searchBtn">Search</button>
+
+
+                <input
+                    id="newsInput"
+                    type="search"
+                    class="input-box"
+                    placeholder="e.g. Science"
+                    aria-label="Search news">
+
+                <button
+                    id="searchBtn"
+                    class="searchBtn"
+                    type="button">
+
+                    Search
+
+                </button>
+
             </div>
+
         </div>
     </nav>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
     <main>
-        <div class="cards-container container flex" id="cards-container">
-           
+
+        <div
+            class="cards-container container flex"
+            id="cards-container"
+            aria-live="polite">
+
+            <!-- News cards are loaded by JavaScript -->
+
         </div>
+
     </main>
-<template id="template-news-card">
- <div class="card">
-                <div class="card-header">
-                    <img src="https://placehold.co/400" alt="firstImage" id="news-img">
-                </div>
-                <div class="card-content">
-                    <h3 id="news-title">This is the Title</h3>
-                    <h6 id="news-source" class="news-source">End Gadget 26/09/2026</h6>
-                    <p id="news-desc" class="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptatem veritatis reiciendis provident quis repellendus cumque ex sit exercitationem minus?</p>
-                            
-                </div>
+
+
+    <!-- =========================
+         NEWS CARD TEMPLATE
+    ========================== -->
+
+    <template id="template-news-card">
+
+        <article class="card">
+
+            <div class="card-header">
+
+                <img
+                    src="https://placehold.co/400"
+                    alt="News article image"
+                    id="news-img"
+                    loading="lazy"
+                    width="400"
+                    height="225">
+
             </div>
-</template>
-<script src="script.js"></script>
+
+
+            <div class="card-content">
+
+                <h2 id="news-title">
+                    News Title
+                </h2>
+
+
+                <h6
+                    id="news-source"
+                    class="news-source">
+
+                    News Source · Date
+
+                </h6>
+
+
+                <p
+                    id="news-desc"
+                    class="news-desc">
+
+                    News description will appear here.
+
+                </p>
+
+            </div>
+
+        </article>
+
+    </template>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js" defer></script>
+
 </body>
 
 </html>
