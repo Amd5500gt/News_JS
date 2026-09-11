@@ -1,32 +1,32 @@
-// ========================================
-// CLOUDFLARE WORKER API
-// ========================================
 
 const API_URL = "https://news-api-proxy.jharjeet95.workers.dev";
-
-
-// ========================================
-// LOAD DEFAULT NEWS
-// ========================================
 
 window.addEventListener("load", () => {
     fetchNews("india");
 });
 
-
-// ========================================
-// RELOAD PAGE
-// ========================================
-
 function reload() {
     window.location.reload();
 }
-
-
 // ========================================
-// FETCH NEWS
+// LOADING SPINNER
 // ========================================
 
+function showLoading() {
+    const spinner = document.getElementById("loading-spinner");
+
+    if (spinner) {
+        spinner.classList.add("show");
+    }
+}
+
+function hideLoading() {
+    const spinner = document.getElementById("loading-spinner");
+
+    if (spinner) {
+        spinner.classList.remove("show");
+    }
+}
 async function fetchNews(query) {
 
     query = query.trim();
@@ -34,6 +34,9 @@ async function fetchNews(query) {
     if (!query) {
         return;
     }
+
+    // Show spinner
+    showLoading();
 
     try {
 
@@ -44,6 +47,7 @@ async function fetchNews(query) {
         const data = await res.json();
 
         if (!res.ok) {
+
             console.error("API Error:", data);
 
             showError(
@@ -54,6 +58,7 @@ async function fetchNews(query) {
         }
 
         if (data.status !== "ok") {
+
             console.error("NewsAPI Error:", data);
 
             showError(
@@ -72,6 +77,12 @@ async function fetchNews(query) {
         showError(
             "Something went wrong. Please check your internet connection."
         );
+
+    } finally {
+
+        // Hide spinner whether success or error
+        hideLoading();
+
     }
 }
 
