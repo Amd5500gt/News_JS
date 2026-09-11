@@ -2,7 +2,7 @@
 const API_URL = "https://news-api-proxy.jharjeet95.workers.dev";
 
 window.addEventListener("load", () => {
-    fetchNews("india");
+    fetchNews("punjab");
 });
 
 function reload() {
